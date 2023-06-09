@@ -7,9 +7,26 @@
 			width: 50%;
       height: 50%;
 		}
+		video::-webkit-media-controls {
+  display:none !important;
+}
+
+video {
+  pointer-events:none;
+}
+
 	</style>
 </head>
-<body>
-	<video src="rick.mp4" autoplay controls="false"></video>
+
+	<body onload="playVideo()">
+  <video id="myVideo" src="rick.mp4" controls></video>
+
+		<script>
+			function playVideo() {
+  var video = document.getElementById("myVideo");
+  video.play();
+}
+
+		</script>
 </body>
 </html>
